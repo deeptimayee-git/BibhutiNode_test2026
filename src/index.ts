@@ -19,77 +19,80 @@ app.get("/", (req: Request, res: Response) => {
             body {
                 margin: 0;
                 font-family: Arial, sans-serif;
-                background: linear-gradient(to right, #1f4037, #99f2c8);
-                color: #fff;
+                overflow: hidden;
+                color: white;
+            }
+
+            /* Video Background */
+            video {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+                z-index: -1;
+                object-fit: cover;
+            }
+
+            /* Overlay */
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.6);
+            }
+
+            /* Content */
+            .content {
+                position: relative;
                 text-align: center;
+                top: 40%;
+                transform: translateY(-40%);
             }
-            .header {
-                padding: 20px;
-                background: #000;
-                font-size: 28px;
-                font-weight: bold;
-                letter-spacing: 2px;
-            }
-            .container {
-                margin-top: 80px;
-            }
+
             h1 {
                 font-size: 50px;
-                margin-bottom: 10px;
+                letter-spacing: 3px;
             }
+
             p {
-                font-size: 20px;
-                margin-bottom: 30px;
-            }
-            .features {
                 font-size: 22px;
-                margin-top: 20px;
-                line-height: 1.8;
+                margin-top: 10px;
             }
+
             .btn {
-                margin-top: 40px;
+                margin-top: 30px;
                 padding: 15px 30px;
                 font-size: 18px;
                 border: none;
-                border-radius: 6px;
+                border-radius: 5px;
                 background: #ff9800;
-                color: #fff;
+                color: white;
                 cursor: pointer;
             }
+
             .btn:hover {
                 background: #e68900;
-            }
-            .footer {
-                margin-top: 100px;
-                padding: 15px;
-                background: #000;
-                font-size: 14px;
             }
         </style>
     </head>
 
     <body>
 
-        <div class="header">
-            🏬 BIKI SPORTS AND FOOT WEAR
-        </div>
+        <!-- Video Background -->
+        <video autoplay muted loop>
+            <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+        </video>
 
-        <div class="container">
-            <h1>👟 Welcome to BIKI Store ⚽</h1>
-            <p>Your one-stop destination for Sports & Footwear 🏃‍♂️</p>
+        <div class="overlay"></div>
 
-            <div class="features">
-                🏏 Sports Equipment<br>
-                👟 Branded Footwear<br>
-                🎽 Active Wear<br>
-                💯 Best Quality & Affordable Price
-            </div>
-
-            <button class="btn">Shop Now 🛒</button>
-        </div>
-
-        <div class="footer">
-            © 2026 BIKI SPORTS AND FOOT WEAR | Built with ❤️
+        <!-- Content -->
+        <div class="content">
+            <h1>🏬 BIKI SPORTS AND FOOT WEAR</h1>
+            <p>👟 Power Your Game • Style Your Walk ⚽</p>
+            <button class="btn">Explore Now 🛒</button>
         </div>
 
     </body>

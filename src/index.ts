@@ -11,11 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req: Request, res: Response) => {
-  return res.send( "✨ Fairy Lovely 🧚‍♀️<br>" +
-        "💖 Bugu 🐻<br>" +
-        "🌸 Buchhu 🐣<br>" +
-        "⚽ Gettuball 🏀<br>" +
-        "🍬 Gumtall 🍭");
+  return res.send( "This my first Autodeployments project");
 });
 
 
